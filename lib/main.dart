@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:jibeto_app/pages/home_page.dart';
+import 'package:jibeto_app/theme/dark_mode.dart';
+import 'package:jibeto_app/theme/light_mode.dart';
+import 'package:jibeto_app/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
-void main(List<String> args) {
-  runApp(const MyApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,8 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      // theme: ThemeData(useMaterial3: true),
+      debugShowCheckedModeBanner: false,
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      home: const HomePage(),
     );
   }
 }
