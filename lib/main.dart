@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jibeto_app/pages/home_page.dart';
+import 'package:jibeto_app/theme/dark_mode.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: darkMode,
       home: const HomePage(),
     );
   }
