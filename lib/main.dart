@@ -3,7 +3,7 @@ import 'package:jibeto_app/pages/home_page.dart';
 import 'package:jibeto_app/theme/dark_mode.dart';
 
 void main() async {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

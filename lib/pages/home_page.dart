@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jibeto_app/theme/nav_bar.dart';
+import 'package:jibeto_app/theme/fab_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,26 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'incerement',
-        elevation: 10,
-        child: Icon(Icons.add),
-        shape: const CircleBorder(),
-      ),
+      // fab button
+      floatingActionButton: getFab(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 5,
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.home),
-            ),
-          ],
-        ),
-      ),
+      // bottom nav bar
+      bottomNavigationBar: getBottomNavBar(),
+      // main body
       body: const SafeArea(
         child: Center(),
       ),
