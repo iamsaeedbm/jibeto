@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jibeto_app/pages/home_page.dart';
 import 'package:jibeto_app/theme/dark_mode.dart';
 
-void main() async {
+void main() {
   runApp(const MyApp());
 }
 
