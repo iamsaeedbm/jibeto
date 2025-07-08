@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jibeto_app/pages/home_page.dart';
 
-void main() {
+void main(List<String> args) {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
