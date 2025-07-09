@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomNavigationBar extends StatefulWidget {
-  const CustomNavigationBar({super.key});
+class CustomNavBar extends StatefulWidget {
+  const CustomNavBar({super.key});
 
   @override
-  State<CustomNavigationBar> createState() => _CustomNavigationBarState();
+  State<CustomNavBar> createState() => _CustomNavBarState();
 }
 
-class _CustomNavigationBarState extends State<CustomNavigationBar> {
+class _CustomNavBarState extends State<CustomNavBar> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return NavigationBar(selectedIndex: selectedIndex, destinations: const [
+      NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+      NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+    ]);
   }
 }
