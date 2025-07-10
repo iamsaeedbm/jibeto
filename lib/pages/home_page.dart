@@ -11,12 +11,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       bottomNavigationBar: CustomNavBar(),
       body: SafeArea(
           child: Column(
         children: [
-          Text('data'),
+          TextField(
+            decoration: InputDecoration(border: OutlineInputBorder()),
+          ),
+          Text(''),
+          TextButton(onPressed: () {}, child: Text('create')),
+          TextButton(onPressed: () {}, child: Text('read')),
+          TextButton(onPressed: () {}, child: Text('update')),
+          TextButton(onPressed: () {}, child: Text('delete')),
         ],
       )),
     );
