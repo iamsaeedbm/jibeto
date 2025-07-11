@@ -15,6 +15,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     return NavigationBar(selectedIndex: selectedIndex, destinations: const [
       NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
       NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+      NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
     ]);
   }
 }
