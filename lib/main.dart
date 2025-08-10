@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jibeto_app/pages/home_page.dart';
+import 'package:jibeto_app/core/routes/app_route.dart';
 
-void main(List<String> args) {
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,8 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp.router(
+      title: 'jibeto',
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
     );
   }
 }
