@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'jibeto',
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      routerConfig: AppRouter.router,
+      routerConfig: router,
     );
   }
 }
