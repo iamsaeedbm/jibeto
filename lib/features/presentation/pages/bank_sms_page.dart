@@ -6,7 +6,7 @@ class BankSmsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Text('BankSmsPage')),
+      body: SafeArea(child: Center(child: Text('Bank Sms Page'))),
     );
   }
 }
