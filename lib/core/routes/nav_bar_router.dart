@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jibeto_app/core/routes/address_routes.dart';
 import 'package:jibeto_app/features/presentation/pages/ai_page.dart';
 import 'package:jibeto_app/features/presentation/pages/bank_sms_page.dart';
 import 'package:jibeto_app/features/presentation/pages/home_page.dart';
@@ -10,8 +9,26 @@ import 'package:jibeto_app/features/presentation/widgets/custom_nav_bar.dart';
 class NavBarRouter {
   static final _navigatorKey = GlobalKey<NavigatorState>();
   static final router = GoRouter(
-      initialLocation: AddressRoutes.homePage,
+      initialLocation: '/home',
       navigatorKey: _navigatorKey,
+      errorBuilder: (context, state) {
+        return Scaffold(
+          backgroundColor: Colors.grey,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Error: ${state.error}'),
+                ElevatedButton(
+                    onPressed: () {
+                      context.go('/home');
+                    },
+                    child: Text('Back to Home'))
+              ],
+            ),
+          ),
+        );
+      },
       routes: [
         StatefulShellRoute.indexedStack(
             builder: (context, state, navigationShell) {
@@ -20,25 +37,25 @@ class NavBarRouter {
             branches: [
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: AddressRoutes.homePage,
+                  path: '/home',
                   builder: (context, state) => HomePage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: AddressRoutes.transactionsPage,
+                  path: '/transactions',
                   builder: (context, state) => TransactionsPage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: AddressRoutes.bankSmsPage,
+                  path: '/banksms',
                   builder: (context, state) => BankSmsPage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: AddressRoutes.aiPage,
+                  path: '/ai',
                   builder: (context, state) => AiPage(),
                 )
               ]),
