@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'jibeto',
+      title: '...',
       debugShowCheckedModeBanner: true,
       theme: ThemeData.dark(useMaterial3: true),
       routerConfig: NavBarRouter.router,

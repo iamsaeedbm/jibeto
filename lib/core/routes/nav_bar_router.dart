@@ -11,6 +11,8 @@ class NavBarRouter {
   static final router = GoRouter(
       initialLocation: '/home',
       navigatorKey: _navigatorKey,
+
+      ///--- go router error handle---///
       errorBuilder: (context, state) {
         return Scaffold(
           backgroundColor: Colors.grey,
@@ -29,6 +31,8 @@ class NavBarRouter {
           ),
         );
       },
+
+      ///--- go router error handle---///
       routes: [
         StatefulShellRoute.indexedStack(
             builder: (context, state, navigationShell) {
