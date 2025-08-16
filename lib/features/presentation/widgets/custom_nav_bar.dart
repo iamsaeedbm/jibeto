@@ -13,11 +13,14 @@ class CustomNavBar extends StatelessWidget {
           onDestinationSelected: navigationShell.goBranch,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
             NavigationDestination(
-                icon: Icon(Icons.thumbs_up_down), label: 'Transactions'),
-            NavigationDestination(icon: Icon(Icons.sms), label: 'Bank SMS'),
-            NavigationDestination(icon: Icon(Icons.rocket), label: 'Ai'),
+                icon: Icon(Icons.account_balance), label: 'Home'),
+            NavigationDestination(
+                icon: Icon(Icons.swap_vert), label: 'Transactions'),
+            NavigationDestination(
+                icon: Icon(Icons.mail_outlined), label: 'Bank SMS'),
+            NavigationDestination(
+                icon: Icon(Icons.savings_outlined), label: 'Ai'),
           ]),
     );
   }
