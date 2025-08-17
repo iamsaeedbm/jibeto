@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jibeto_app/features/presentation/pages/ai_page.dart';
+import 'package:jibeto_app/core/routes/app_routes.dart';
+import 'package:jibeto_app/features/presentation/pages/piggy_bank_page.dart';
 import 'package:jibeto_app/features/presentation/pages/bank_sms_page.dart';
 import 'package:jibeto_app/features/presentation/pages/home_page.dart';
 import 'package:jibeto_app/features/presentation/pages/transactions_page.dart';
@@ -9,7 +10,7 @@ import 'package:jibeto_app/features/presentation/widgets/custom_nav_bar.dart';
 class NavBarRouter {
   static final _navigatorKey = GlobalKey<NavigatorState>();
   static final router = GoRouter(
-      initialLocation: '/home',
+      initialLocation: AppRoutes.homeUrl,
       navigatorKey: _navigatorKey,
 
       ///--- go router error handle---///
@@ -23,7 +24,7 @@ class NavBarRouter {
                 Text('Error: ${state.error}'),
                 ElevatedButton(
                     onPressed: () {
-                      context.go('/home');
+                      context.goNamed(AppRoutes.homeName);
                     },
                     child: Text('Back to Home'))
               ],
@@ -32,7 +33,8 @@ class NavBarRouter {
         );
       },
 
-      ///--- go router error handle---///
+      ///------///
+      ///
       routes: [
         StatefulShellRoute.indexedStack(
             builder: (context, state, navigationShell) {
@@ -41,26 +43,30 @@ class NavBarRouter {
             branches: [
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: '/home',
-                  builder: (context, state) => HomePage(),
+                  path: AppRoutes.piggyBankUrl,
+                  name: AppRoutes.piggyBankName,
+                  builder: (context, state) => const PiggyBankPage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: '/transactions',
-                  builder: (context, state) => TransactionsPage(),
+                  path: AppRoutes.bankSmsUrl,
+                  name: AppRoutes.bankSmsName,
+                  builder: (context, state) => const BankSmsPage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: '/banksms',
-                  builder: (context, state) => BankSmsPage(),
+                  path: AppRoutes.transactionsUrl,
+                  name: AppRoutes.transactionsName,
+                  builder: (context, state) => const TransactionsPage(),
                 )
               ]),
               StatefulShellBranch(routes: [
                 GoRoute(
-                  path: '/ai',
-                  builder: (context, state) => AiPage(),
+                  path: AppRoutes.homeUrl,
+                  name: AppRoutes.homeName,
+                  builder: (context, state) => const HomePage(),
                 )
               ]),
             ])
