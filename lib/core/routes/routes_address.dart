@@ -1,4 +1,4 @@
-class AppRoutes {
+class RoutesAddress {
   static const String homeUrl = '/home-page';
   static const String homeName = 'HomePage';
 

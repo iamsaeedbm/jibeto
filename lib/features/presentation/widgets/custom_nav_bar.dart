@@ -14,12 +14,12 @@ class CustomNavBar extends StatelessWidget {
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           destinations: [
             NavigationDestination(
-                icon: Icon(Icons.savings_outlined), label: 'قلک'),
-            NavigationDestination(
-                icon: Icon(Icons.mail_outlined), label: 'پیامک'),
+                icon: Icon(Icons.account_balance), label: 'خانه'),
             NavigationDestination(icon: Icon(Icons.swap_vert), label: 'تراکنش'),
             NavigationDestination(
-                icon: Icon(Icons.account_balance), label: 'خانه'),
+                icon: Icon(Icons.mail_outlined), label: 'پیامک'),
+            NavigationDestination(
+                icon: Icon(Icons.savings_outlined), label: 'قلک'),
           ]),
     );
   }
