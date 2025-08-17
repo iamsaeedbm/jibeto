@@ -9,21 +9,21 @@ final List<GoRoute> shellRoutes = [
   GoRoute(
     path: RoutesAddress.homeUrl,
     name: RoutesAddress.homeName,
-    builder: (context, state) => const HomePage(),
+    builder: (context, state) => HomePage(),
   ),
   GoRoute(
     path: RoutesAddress.transactionsUrl,
     name: RoutesAddress.transactionsName,
-    builder: (context, state) => const TransactionsPage(),
+    builder: (context, state) => TransactionsPage(),
   ),
   GoRoute(
     path: RoutesAddress.bankSmsUrl,
     name: RoutesAddress.bankSmsName,
-    builder: (context, state) => const BankSmsPage(),
+    builder: (context, state) => BankSmsPage(),
   ),
   GoRoute(
     path: RoutesAddress.piggyBankUrl,
     name: RoutesAddress.piggyBankName,
-    builder: (context, state) => const PiggyBankPage(),
+    builder: (context, state) => PiggyBankPage(),
   ),
 ];

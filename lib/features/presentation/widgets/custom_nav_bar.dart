@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jibeto_app/features/presentation/widgets/custom_fab.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({super.key, required this.navigationShell});
@@ -8,6 +9,9 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: navigationShell,
+      //--- FAB ---//
+      floatingActionButton: CustomFab(onPressed: () {}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: NavigationBar(
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: navigationShell.goBranch,

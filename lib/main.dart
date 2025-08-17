@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jibeto_app/core/routes/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:jibeto_app/core/theme/custom_theme.dart';
 
 void main() {
   runApp(const MyApp());
