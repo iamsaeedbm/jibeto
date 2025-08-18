@@ -12,17 +12,18 @@ class CustomNavBar extends StatelessWidget {
       //--- FAB ---//
       floatingActionButton: CustomFab(onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: NavigationBar(
-          selectedIndex: navigationShell.currentIndex,
-          onDestinationSelected: navigationShell.goBranch,
-          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-          destinations: [
-            NavigationDestination(
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: navigationShell.currentIndex,
+          onTap: navigationShell.goBranch,
+          showUnselectedLabels: false,
+          items: const [
+            BottomNavigationBarItem(
                 icon: Icon(Icons.account_balance), label: 'خانه'),
-            NavigationDestination(icon: Icon(Icons.swap_vert), label: 'تراکنش'),
-            NavigationDestination(
+            BottomNavigationBarItem(
+                icon: Icon(Icons.swap_vert), label: 'تراکنش'),
+            BottomNavigationBarItem(
                 icon: Icon(Icons.mail_outlined), label: 'پیامک'),
-            NavigationDestination(
+            BottomNavigationBarItem(
                 icon: Icon(Icons.savings_outlined), label: 'قلک'),
           ]),
     );
